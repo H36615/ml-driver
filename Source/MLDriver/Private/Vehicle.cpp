@@ -29,8 +29,20 @@ AVehicle::AVehicle(const FObjectInitializer& ObjectInitializer)
 		Mesh->SetSimulatePhysics(true);
 	}
 
-	// Collision = CreateDefaultSubobject<UBoxComponent>(TEXT("Cube"));
-	// Collision->AttachToComponent(Root, FAttachmentTransformRules::KeepRelativeTransform);
+
+
+	// -- Camera...
+	// TODO Set the camera from code, not from the editor.
+	// Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera0"));
+	// Camera->SetupAttachment(SpringArm, USpringArmComponent::SocketName);
+	// Camera->bUsePawnControlRotation = false;
+	// Camera->FieldOfView = 90.f;
+	//
+	//      this->PlayerController = this->GetWorld()->GetFirstPlayerController();
+	// if (this->PlayerController && this->ViewTarget)
+	// {
+	// 	this->PlayerController->SetViewTarget(this->ViewTarget);
+	// }
 }
 
 void AVehicle::BeginPlay()
