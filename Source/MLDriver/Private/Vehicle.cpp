@@ -25,6 +25,8 @@ AVehicle::AVehicle(const FObjectInitializer& ObjectInitializer)
 		// TODO remove comments below.
 		// Mesh->SetRelativeLocation(FVector(0.0f, 0.0f, -40.0f));
 		// Mesh->SetWorldScale3D(FVector(0.8f));
+		
+		Mesh->SetSimulatePhysics(true);
 	}
 
 	Collision = CreateDefaultSubobject<UBoxComponent>(TEXT("Cube"));
