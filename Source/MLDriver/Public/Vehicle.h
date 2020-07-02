@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Camera/CameraComponent.h"
 #include "Components/BoxComponent.h"
 #include "GameFramework/Actor.h"
 #include "Vehicle.generated.h"
@@ -27,6 +28,12 @@ public:
 	UStaticMeshComponent *Mesh;
 
 	// UPROPERTY(EditAnywhere)
- //    UBoxComponent *Collision;
+	// UCameraComponent *Camera;
+
+	virtual void SetupPlayerInputComponent(UInputComponent* PlayerController) override;
+
+	void MoveForward(float Val);
+	void MoveRight(float Val);
+
 
 };

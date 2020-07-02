@@ -1,6 +1,7 @@
 
 #include "Vehicle.h"
 #include "Components/BoxComponent.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 // Sets default values
 AVehicle::AVehicle(const FObjectInitializer& ObjectInitializer)
@@ -56,4 +57,37 @@ void AVehicle::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
+
+/**
+ * Called upon possession by a PlayerController
+ */
+void AVehicle::SetupPlayerInputComponent(UInputComponent* PlayerController)
+{
+	// set up key bindings
+	check(PlayerController);
+
+	PlayerController->BindAxis("forward", this, &AVehicle::MoveForward);
+	PlayerController->BindAxis("right", this, &AVehicle::MoveRight);
+}
+
+
+void AVehicle::MoveForward(float Val)
+{
+	Mesh->AddForce(
+		Mesh->GetForwardVector() * 400 * Val * Mesh->GetMass(),
+		NAME_None,
+		false
+	);
+
+	UE_LOG(LogClass, Log, TEXT("Forward Vector: %s"), *Mesh->GetForwardVector().ToString());
+}
+
+void AVehicle::MoveRight(float Val)
+{
+	// Actually rotates... TODO name things better.
+	FRotator rotation = FRotator(0, Val, 0);
+
+	Mesh->AddLocalRotation(rotation);
+}
+
 
