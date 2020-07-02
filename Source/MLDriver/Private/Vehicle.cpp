@@ -29,8 +29,8 @@ AVehicle::AVehicle(const FObjectInitializer& ObjectInitializer)
 		Mesh->SetSimulatePhysics(true);
 	}
 
-	Collision = CreateDefaultSubobject<UBoxComponent>(TEXT("Cube"));
-	Collision->AttachToComponent(Root, FAttachmentTransformRules::KeepRelativeTransform);
+	// Collision = CreateDefaultSubobject<UBoxComponent>(TEXT("Cube"));
+	// Collision->AttachToComponent(Root, FAttachmentTransformRules::KeepRelativeTransform);
 }
 
 void AVehicle::BeginPlay()

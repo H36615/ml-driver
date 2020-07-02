@@ -26,7 +26,7 @@ public:
 	UPROPERTY(EditAnywhere)
 	UStaticMeshComponent *Mesh;
 
-	UPROPERTY(EditAnywhere)
-    UBoxComponent *Collision;
+	// UPROPERTY(EditAnywhere)
+ //    UBoxComponent *Collision;
 
 };
