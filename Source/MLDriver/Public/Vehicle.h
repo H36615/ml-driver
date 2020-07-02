@@ -6,7 +6,7 @@
 #include "Vehicle.generated.h"
 
 UCLASS()
-class MLDRIVER_API AVehicle : public AActor
+class MLDRIVER_API AVehicle : public APawn
 {
 	GENERATED_BODY()
 	
